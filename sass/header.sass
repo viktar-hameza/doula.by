@@ -2,12 +2,112 @@
 @import "vars.sass"
 
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.6
-	font-family: "RobotoRegular", sans-serif
-	overflow-x: hidden
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.6
+  font-family: $fontmain, sans-serif
+  overflow-x: hidden
+
+html 
+  box-sizing: border-box; 
+
+*
+  &:before, &:after 
+    box-sizing: inherit
+
+.clearfix:after
+  content: ""
+  display: table
+  clear:both
 
 .hidden
-	display: none
+  display: none
+
+.ulli 
+  margin: 0
+  padding: 0
+  list-style: none
+
+a:hover
+  text-decoration: none
+  color: $color-hover
+a:active, a:focus
+    text-decoration: none
+    color: inherit
+
+b, strong 
+  font-family: $fontmain-bold, sans-serif
+  font-weight: normal
+
+h1, h2, h3, h4, h5, h6 
+  font-family: $fontmain-bold, sans-serif
+  font-weight: normal
+
+
+// -----------------------------------------------------------------------
+//   [Header]
+// ----------------------------------------------------------------------
+.main-header
+  &__nav
+    // box-shadow: 0 0 0 1px #f4f4f4;
+    // background: #f9fafb
+.main-nav
+  &__logo
+    text-align: center
+  &__list
+    @extend .ulli
+    &--r
+      text-align: left
+    &--l
+      text-align: right
+  &__item
+    display: inline-block
+  &__link
+    position: relative
+    display: block
+    line-height: 60px
+    color: #5f5f5f
+    text-transform: uppercase
+    padding: 0 16px
+    font-size: 14px
+    transition: $transition
+    &:before
+      content: ' '
+      display: block
+      width: 0
+      height: 3px
+      position: absolute
+      top: 0
+      left: 0
+      transition: $transition
+    &:hover:before
+      width: 100%
+      background: $color-hover
+.logo
+  display: block
+  font-size: 32px
+  // font-family: $fontmain-bold
+  // text-transform: uppercase
+  color: #333
+  text-decoration: none
+  height: 60px
+  line-height: 54px
+  &:hover
+    color: #666
+
+// ---------------------------------
+//   [Slider]
+// ---------------------------------
+
+.main-header__slider
+  height: 480px
+  overflow: hidden
+.main-header__slider img
+  // height: 480px
+  width: 100%
+
+// -----------------------------------------------------------------------
+//   [Main]
+// ----------------------------------------------------------------------
+
